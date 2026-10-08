@@ -1,0 +1,33 @@
+openapi: 3.1.0
+
+info:
+  title: MAS Diagnostics API
+  version: 1.0.0
+
+paths:
+  /low-beam-light/state:
+    get:
+      x-us: US-0001
+      operationId: getLowBeamLightState
+      summary: Get low-beam light state
+
+      responses:
+        '200':
+          description: Low-beam light state
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LowBeamLightStateDTO'
+
+components:
+  schemas:
+    LowBeamLightStateDTO:
+      type: object
+      required:
+        - state
+      properties:
+        state:
+          type: string
+          enum:
+            - ON
+            - OFF
