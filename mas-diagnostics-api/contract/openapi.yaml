@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 
 paths:
-  /low-beam-light/state:
+  /vehicle/low-beam-light:
     get:
       x-us: US-0001
       operationId: getLowBeamLightState
@@ -17,11 +17,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LowBeamLightStateDTO'
+                $ref: '#/components/schemas/LowBeamLightDTO'
 
 components:
   schemas:
-    LowBeamLightStateDTO:
+    LowBeamLightDTO:
       type: object
       required:
         - state
