@@ -7,7 +7,6 @@ info:
 paths:
   /vehicle/low-beam-light:
     get:
-      x-us: US-0001
       operationId: getLowBeamLightState
       summary: Get low-beam light state
 

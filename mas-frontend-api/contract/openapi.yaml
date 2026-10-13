@@ -1,0 +1,35 @@
+openapi: 3.1.0
+
+info:
+  title: MAS Frontend API
+  version: 1.0.0
+
+paths:
+  /vehicle/low-beam-light/refresh:
+    post:
+      operationId: updateLowBeamLight
+      summary: Update low-beam light
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LowBeamLightDTO'
+            example:
+              state: 'ON'
+      responses:
+        '200':
+          description: OK
+
+components:
+  schemas:
+    LowBeamLightDTO:
+      type: object
+      required:
+        - state
+      properties:
+        state:
+          type: string
+          enum:
+            - 'ON'
+            - 'OFF'
