@@ -28,5 +28,5 @@ components:
         state:
           type: string
           enum:
-            - ON
-            - OFF
+            - 'ON'
+            - 'OFF'

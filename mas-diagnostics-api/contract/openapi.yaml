@@ -18,6 +18,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/LowBeamLightDTO'
 
+    post:
+      operationId: updateLowBeamLight
+      summary: Update low-beam light state
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LowBeamLightDTO'
+            example:
+              state: 'ON'
+      responses:
+        '200':
+          description: OK
+
 components:
   schemas:
     LowBeamLightDTO:
@@ -28,5 +43,5 @@ components:
         state:
           type: string
           enum:
-            - ON
-            - OFF
+            - 'ON'
+            - 'OFF'
