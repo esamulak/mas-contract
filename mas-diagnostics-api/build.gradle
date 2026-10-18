@@ -1,0 +1,4 @@
+openApiGenerate {
+    apiPackage = 'pl.es8it.mas.contract.diagnostics'
+    modelPackage = 'pl.es8it.mas.contract.diagnostics.dto'
+}

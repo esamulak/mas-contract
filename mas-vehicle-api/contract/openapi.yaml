@@ -1,0 +1,32 @@
+openapi: 3.1.0
+
+info:
+  title: MAS Vehicle API
+  version: 1.0.0
+
+paths:
+  /vehicle/low-beam-light:
+    get:
+      operationId: fetchLowBeamLightState
+      summary: Fetch low-beam light state from the vehicle
+
+      responses:
+        '200':
+          description: Low-beam light data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LowBeamLightStateDTO'
+
+components:
+  schemas:
+    LowBeamLightStateDTO:
+      type: object
+      required:
+        - state
+      properties:
+        state:
+          type: string
+          enum:
+            - ON
+            - OFF

@@ -5,14 +5,14 @@ info:
   version: 1.0.0
 
 paths:
-  /vehicle/low-beam-light:
+  /low-beam-light:
     get:
-      operationId: getLowBeamLightState
+      operationId: getLowBeamLight
       summary: Get low-beam light state
 
       responses:
         '200':
-          description: Low-beam light state
+          description: Low-beam light
           content:
             application/json:
               schema:
