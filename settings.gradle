@@ -1,5 +1,4 @@
 rootProject.name = 'mas-contract'
 
 include 'mas-diagnostics-api'
-include 'mas-frontend-api'
 include 'mas-vehicle-api'

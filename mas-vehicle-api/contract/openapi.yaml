@@ -5,27 +5,27 @@ info:
   version: 1.0.0
 
 paths:
-  /vehicle/low-beam-light:
+  /vehicle/ignition:
     get:
-      operationId: fetchLowBeamLightState
-      summary: Fetch low-beam light state from the vehicle
+      operationId: fetchIgnitionStatus
+      summary: Fetch ignition status from the vehicle
 
       responses:
         '200':
-          description: Low-beam light data
+          description: Ignition data
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LowBeamLightStateDTO'
+                $ref: '#/components/schemas/VehicleIgnitionDTO'
 
 components:
   schemas:
-    LowBeamLightStateDTO:
+    VehicleIgnitionDTO:
       type: object
       required:
-        - state
+        - status
       properties:
-        state:
+        status:
           type: string
           enum:
             - 'ON'
