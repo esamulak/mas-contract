@@ -1,0 +1,5 @@
+openApiGenerate {
+    apiPackage = 'pl.es8it.mas.contract.common'
+    modelPackage = 'pl.es8it.mas.contract.common.dto'
+    configOptions.put('useBeanValidation', 'true')
+}
