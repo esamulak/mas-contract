@@ -5,6 +5,7 @@ plugins {
 subprojects {
     apply plugin: 'java-library'
     apply plugin: 'org.openapi.generator'
+    apply plugin: 'maven-publish'
 
     group = 'pl.es8it.mas.contract'
     version = '1.0.0'
@@ -54,5 +55,13 @@ subprojects {
 
     tasks.named('compileJava') {
         dependsOn tasks.named('openApiGenerate')
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
     }
 }
