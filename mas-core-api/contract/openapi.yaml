@@ -1,7 +1,7 @@
 openapi: 3.1.0
 
 info:
-  title: MAS Common API
+  title: MAS Core API
   version: 1.0.0
 
 paths: {}
