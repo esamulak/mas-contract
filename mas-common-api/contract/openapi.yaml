@@ -8,7 +8,7 @@ paths: {}
 
 components:
   schemas:
-    ErrorDTO:
+    ErrorResponseDTO:
       type: object
       required:
         - errorCode
