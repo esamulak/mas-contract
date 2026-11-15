@@ -26,7 +26,10 @@ components:
         - status
       properties:
         status:
-          type: string
-          enum:
-            - 'ON'
-            - 'OFF'
+          $ref: '#/components/schemas/IgnitionStatus'
+
+    IgnitionStatus:
+      type: string
+      enum:
+        - 'ON'
+        - 'OFF'
