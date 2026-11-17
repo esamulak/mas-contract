@@ -1,0 +1,12 @@
+type: object
+required:
+  - errorCode
+  - errorMessage
+properties:
+  errorCode:
+    type: string
+    pattern: '^MASERR-\d{4}[BT]$'
+  errorMessage:
+    type: string
+    minLength: 1
+    maxLength: 255

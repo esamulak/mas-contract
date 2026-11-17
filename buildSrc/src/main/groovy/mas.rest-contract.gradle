@@ -1,0 +1,39 @@
+// REST: contract/rest/openapi.yaml -> Spring interfaces + DTOs
+plugins {
+    id 'mas.contract'
+    id 'org.openapi.generator'
+}
+
+dependencies {
+    api 'org.springframework:spring-web:7.0.2'
+}
+
+openApiGenerate {
+    inputSpec = layout.projectDirectory.file('contract/rest/openapi.yaml').asFile.path
+    outputDir = layout.buildDirectory.dir('generated/openapi').get().asFile.path
+    generatorName = 'spring'
+    generateApiDocumentation = false
+    generateModelDocumentation = false
+    generateApiTests = false
+    generateModelTests = false
+    globalProperties = [
+            apis  : '',
+            models: ''
+    ]
+    configOptions = [
+            interfaceOnly             : 'true',
+            useSpringBoot4            : 'true',
+            skipDefaultInterface      : 'true',
+            openApiNullable           : 'false',
+            useBeanValidation         : 'false',
+            useSpringBuiltInValidation: 'true',
+            documentationProvider     : 'none',
+            annotationLibrary         : 'none'
+    ]
+}
+
+sourceSets.main.java.srcDir(layout.buildDirectory.dir('generated/openapi/src/main/java'))
+
+tasks.named('compileJava') {
+    dependsOn tasks.named('openApiGenerate')
+}

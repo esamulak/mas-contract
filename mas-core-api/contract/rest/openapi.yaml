@@ -1,0 +1,12 @@
+openapi: 3.0.3
+
+info:
+  title: MAS Core API
+  version: 1.0.0
+
+paths: {}
+
+components:
+  schemas:
+    ErrorResponseDTO:
+      $ref: './schema/ErrorResponseDTO.yaml'

@@ -1,4 +1,7 @@
-openApiGenerate {
-    apiPackage = 'pl.es8it.mas.contract.vehicle'
-    modelPackage = 'pl.es8it.mas.contract.vehicle.dto'
+plugins {
+    id 'mas.rabbitmq-contract'
+}
+
+jsonSchema2Pojo {
+    targetPackage = 'pl.es8it.mas.contract.vehicle.dto'
 }

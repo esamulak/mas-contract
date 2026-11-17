@@ -1,0 +1,18 @@
+// RabbitMQ: contract/rabbitmq/schema/*.yaml -> DTOs, contract/rabbitmq/*.java -> topic/queue names
+plugins {
+    id 'mas.contract'
+    id 'org.jsonschema2pojo'
+}
+
+jsonSchema2Pojo {
+    source = files('contract/rabbitmq/schema')
+    sourceType = 'yamlschema'
+    annotationStyle = 'jackson2'
+    includeJsr303Annotations = true
+    useJakartaValidation = true
+    includeAdditionalProperties = false
+    includeGeneratedAnnotation = false
+    generateBuilders = false
+}
+
+sourceSets.main.java.srcDir('contract/rabbitmq')

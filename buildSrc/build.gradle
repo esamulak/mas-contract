@@ -1,0 +1,12 @@
+plugins {
+    id 'groovy-gradle-plugin'
+}
+
+repositories {
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation 'org.openapitools:openapi-generator-gradle-plugin:7.25.0'
+    implementation 'org.jsonschema2pojo:jsonschema2pojo-gradle-plugin:1.2.2'
+}

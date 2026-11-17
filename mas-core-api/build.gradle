@@ -1,3 +1,7 @@
+plugins {
+    id 'mas.rest-contract'
+}
+
 openApiGenerate {
     apiPackage = 'pl.es8it.mas.contract.core'
     modelPackage = 'pl.es8it.mas.contract.core.dto'
